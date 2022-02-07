@@ -42,7 +42,7 @@ effectsize0 = function(x, y, design, method) {
   
   var_effs = if (design == "between") { # variance around Cohen's d
     nu/(nu-2)*(2/hm)*(1+d_biased^2*(hm/2))-d_biased^2/J^2
-  } else if (design=="within_av" && design == "within_rm") {
+  } else if (design == "within_av" && design == "within_rm") {
     r = cor(x,y) # correlation coefficient
     cov = cov(x, y) # covariance
     (nu/(nu-2))*(2*(1-r)/n)*(1+d_biased^2*(n/(2*(1-r))))-d_biased^2/J^2 
@@ -72,7 +72,7 @@ effectsize0 = function(x, y, design, method) {
   } else {
     d_unbiased*sqrt(n)
   } 
-  if (method=="noncentral") {
+  if (method == "noncentral") {
     # Confidence interval around lambda
     tll_d = qt(0.5-coverage/2, df=nu, ncp=lambda_d)
     tul_d = qt(0.5+coverage/2, df=nu, ncp=lambda_d)
