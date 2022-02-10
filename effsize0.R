@@ -1,8 +1,8 @@
-## Henry, W. (2022). effectsize0 (Version 1.0) [Source code].
+## Henry, W. (2022). effectsize0 (Version 1.0).
 ## ------- Inspired from: Goulet-Pelletier and Cousineau (2018); Fitts (2020)
 rm(list = ls()) # clear workspace
 
-effectsize0 = function(x, y, design, method) {
+effectsize0 <- function(x, y, design, method) {
   coverage = 0.95 # coverage
   sd = if (design == "between"){ #sd
     sqrt((var(x)*(length(x)-1)+var(y)*(length(y)-1))/(length(x)+length(y)-2)) # (weighted) pooled standard deviation for Cohen's d_s/d_p
