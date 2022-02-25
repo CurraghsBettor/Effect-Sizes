@@ -4,7 +4,7 @@ rm(list = ls()) # clear workspace
 
 effectsize0 <- function(x, y, design, method) {
   coverage = 0.95 # coverage
-  sd = if (design == "between"){ #sd = the standardizer
+  sd = if (design == "between"){ #sd --> the standardiser
     sqrt((var(x)*(length(x)-1)+var(y)*(length(y)-1))/(length(x)+length(y)-2)) # (weighted) pooled standard deviation for Cohen's d_s/d_p
   } else if (design == "within_av") {
     (sd(x)+ sd(y))/2 # (unweighted) average standard deviation for Cohen's d_av
