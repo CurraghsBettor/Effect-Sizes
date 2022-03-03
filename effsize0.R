@@ -26,7 +26,7 @@ effectsize0 <- function(x, y, design, method, coverage) {
     n = length(x)
     n-1 
               # Williams' note: Goulet-Pelletier and Cousineau (2018) used 2(n-1); but Fitts (2020) argued that the appropriate df is function of Rho, that is, lies between 2(n-1) and n-1 as a function of the increasing value of Rho
-              # but compared to 2(n-1) using n-1 offers an appropriate coverage rate (the proportion of time that confidence intervals will include the population delta parameter, that is 0.95, Fitts, 2020; 2021) at multiple effect sizes, Rho values and sample sizes (Fitts, 2020)
+              # but compared to 2(n-1) using n-1 offers an appropriate coverage rate (the proportion of time that confidence intervals will include the population delta parameter, e.g., 0.95, Fitts, 2020; 2021) at multiple effect sizes, Rho values and sample sizes (Fitts, 2020)
   }     
   J = gamma(0.5*nu)/(sqrt(nu/2)*gamma(0.5*(nu-1))) # Hedges' correction factor (with a gamma function) to unbiased d (Hedges, 1981) 
   d_unbiased = d_biased*J # Cohen's d_unbiased/ Hedges' g, g*, Hedges'h (see Nakagawa & Cuthill, 2007)
