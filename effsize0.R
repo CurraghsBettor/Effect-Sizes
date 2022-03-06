@@ -25,7 +25,7 @@ effectsize0 <- function(x, y, design, method, coverage) {
   } else {
     n = length(x)
     n-1 
-              # Williams' note: Goulet-Pelletier and Cousineau (2018) used 2(n-1); but Fitts (2020) argued that the appropriate df is function of Rho, that is, lies between 2(n-1) and n-1 as a function of the increasing value of Rho (etimated by r)
+              # Williams' note: Goulet-Pelletier and Cousineau (2018) used 2(n-1); but Fitts (2020) argued that the appropriate df is function of Rho (etimated by r), that is, lies between 2(n-1) and n-1 as a function of the increasing value of Rho
               # but compared to 2(n-1) using n-1 offers an appropriate coverage rate (i.e., the proportion of time that confidence intervals will include the population delta parameter, e.g., 0.95, Fitts, 2020; 2021)
   }     
   J = gamma(0.5*nu)/(sqrt(nu/2)*gamma(0.5*(nu-1))) # Hedges' correction factor (with a gamma function) to unbiased d (Hedges, 1981) 
@@ -45,7 +45,7 @@ effectsize0 <- function(x, y, design, method, coverage) {
   se_d = sqrt(var_effs) # se
   se_g = sqrt(variance_g) # se
   ## Compute 95% CI from a noncentral t distribution (method == "noncentral") or a central t distribution (method == "central")
-  # Estimate a noncentrality paramter lambda
+  # Estimate a noncentrality parameter lambda
   lambda_d = if (design == "between") {
     d_biased*sqrt(hm/2)
   } else if (design == "within_av" && design == "within_rm") {
