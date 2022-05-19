@@ -25,7 +25,7 @@ effectsize0 <- function(x, y, design, method, coverage) {
   } else {
     n = length(x)
     n-1 
-              # Williams' note: Goulet-Pelletier and Cousineau (2018) used 2(n-1); but Fitts (2020) argued that the appropriate df is function of Rho (etimated by r), that is, lies between 2(n-1) and n-1 as a function of the increasing value of Rho
+              # Williams' note: Goulet-Pelletier and Cousineau (2018) have used 2(n-1); but Fitts (2020) has argued that the appropriate df is function of Rho (etimated by r), that is, lies between 2(n-1) and n-1 as a function of the increasing value of Rho
               # but compared to 2(n-1) using n-1 offers an appropriate coverage rate (i.e., the proportion of time that confidence intervals will include the population delta parameter, e.g., 0.95, Fitts, 2020; 2021)
   }     
   J = gamma(0.5*nu)/(sqrt(nu/2)*gamma(0.5*(nu-1))) # Hedges' correction factor (with a gamma function) to unbiased d (Hedges, 1981) 
@@ -63,8 +63,9 @@ effectsize0 <- function(x, y, design, method, coverage) {
     d_unbiased*sqrt(n)
   } 
   if (method=="noncentral") {
-    # Confidence interval around lambda --> Hedges & Olkin (1985)
+    # Confidence intervals around lambda --> Hedges & Olkin (1985)
     tll_d = qtAppr(0.5-coverage/2, df=nu, ncp=lambda_d)
+    tul_d = qtAppr(0.5+coverage/2, df=nu, ncp=lambda_d
     tll_g = qtAppr(0.5-coverage/2, df=nu, ncp=lambda_g) 
     tul_g = qtAppr(0.5+coverage/2, df=nu, ncp=lambda_g)
     # Cohen's d 95%CI
@@ -138,13 +139,13 @@ effectsize0 <- function(x, y, design, method, coverage) {
 #######################################################
 #-----------------------------------------------------#
 
-## design : choose which effect size to calculate according to your desgin
+## design : choose which effect size need to be calculated according to your desgin
 # between --> Cohen's d_s/Hedges'g_s
 # within_av --> Cohen's d_av/Hedges'g_av
 # within_rm --> Cohen's d_rm/Hedges'g_rm
 # within_z --> Cohen's d_z/Hedges'g_z
 
-## method : choose from which method 95%CI should be estimated
+## method : choose from which method 95%CI have to be estimated
 # noncentral
 # central
 # classic
