@@ -30,7 +30,7 @@ effectsize0 <- function(x, y, design, method, coverage) {
   }     
   J = gamma(0.5*nu)/(sqrt(nu/2)*gamma(0.5*(nu-1))) # Hedges' correction factor (with a gamma function) to unbiased d (Hedges, 1981) 
   d_unbiased = d_biased*J # Cohen's d_unbiased/ Hedges' g, g*, Hedges'h (see Nakagawa & Cuthill, 2007)
-  ## compute se 
+  ## se 
   ms = c(length(x), length(y))
   hm =  harmonic.mean(ms); hm # Harmonic mean = 2*length(x)*length(y)/(length(x)+length(y))
   var_effs = if (design == "between") { # variance around Cohen's d
@@ -44,7 +44,7 @@ effectsize0 <- function(x, y, design, method, coverage) {
   variance_g = var_effs*(J^2) # variance around Hedges'g
   se_d = sqrt(var_effs) # se
   se_g = sqrt(variance_g) # se
-  ## Compute 95% CI from a noncentral t distribution (method == "noncentral") or a central t distribution (method == "central")
+  ## 95% CI from a noncentral t distribution (method == "noncentral") or a central t distribution (method == "central")
   # Estimate a noncentrality parameter lambda
   lambda_d = if (design == "between") {
     d_biased*sqrt(hm/2)
@@ -139,7 +139,7 @@ effectsize0 <- function(x, y, design, method, coverage) {
 #######################################################
 #-----------------------------------------------------#
 
-## design : choose which effect size need to be calculated according to your desgin
+## design : choose which effect size have to be calculated according to your desgin
 # between --> Cohen's d_s/Hedges'g_s
 # within_av --> Cohen's d_av/Hedges'g_av
 # within_rm --> Cohen's d_rm/Hedges'g_rm
