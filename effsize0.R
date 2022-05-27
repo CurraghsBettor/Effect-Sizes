@@ -20,11 +20,10 @@ effectsize0 <- function(x, y, design, method, coverage) {
   } else {
     d_biased = d_biased # Cohen's d (_s/_av/_z)
   }
-  nu = if (design == "between") { # df
-    length(x)+length(y)-2
+  if (design == "between") { # df
+    nu = length(x)+length(y)-2
   } else {
-    n = length(x)
-    n-1 
+    nu = length(x)-1 
               # Williams' note: Goulet-Pelletier and Cousineau (2018) have used 2(n-1); but Fitts (2020) has argued that the appropriate df is function of Rho (etimated by r), that is, lies between 2(n-1) and n-1 as a function of the increasing value of Rho
               # but compared to 2(n-1) using n-1 offers an appropriate coverage rate (i.e., the proportion of time that confidence intervals will include the population delta parameter, e.g., 0.95, Fitts, 2020; 2021)
   }     
