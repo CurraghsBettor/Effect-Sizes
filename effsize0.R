@@ -65,7 +65,7 @@ effectsize0 <- function(x, y, design, method, coverage) {
   if (method == "noncentral") {
     # Confidence interval around lambda --> Hedges & Olkin (1985)
     tll_d <- qtAppr(0.5-coverage/2, df=nu, ncp=lambda_d)
-    tul_d <- qtAppr(0.5+coerage/2, df=nu, ncp=lambda_d)
+    tul_d <- qtAppr(0.5+coverage/2, df=nu, ncp=lambda_d)
     tll_g <- qtAppr(0.5-coverage/2, df=nu, ncp=lambda_g) 
     tul_g <- qtAppr(0.5+coverage/2, df=nu, ncp=lambda_g)
     # Cohen's d 95%CI
