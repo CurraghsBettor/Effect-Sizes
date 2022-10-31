@@ -1,5 +1,5 @@
 ## Henry, W. (2022). effectsize0.
-## ------- Inspired from: Goulet-Pelletier and Cousineau (2018); Fitts (2020)
+## ------- Inspired by: Goulet-Pelletier and Cousineau (2018); Fitts (2020)
 rm(list = ls()) # clear workspace
 
 effectsize0 <- function(x, y, design, method, coverage) {
