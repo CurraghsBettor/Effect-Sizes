@@ -8,4 +8,4 @@ Fitts, D. A. (2020). Commentary on “A review of effect sizes and their confide
 
 Goulet-Pelletier, J. C., & Cousineau, D. (2018). A review of effect sizes and their confidence intervals, Part I: The Cohen’sd family. The Quantitative Methods for Psychology, 14(4), 242-265.
 
-I propose `effectsize2`, a function allowing to obtain Cohen's d_s or Cohen's d_p for a between-subjects design. The protocol to estimate confidence intervals relies on the noncentral $Lambda$' distribution.
+I propose `effectsize2`, a function allowing to obtain Cohen's d_s or Cohen's d_p for a between-subjects design. The protocol to estimate confidence intervals relies on the noncentral $\Lambda\$' distribution.
